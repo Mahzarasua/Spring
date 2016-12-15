@@ -7,7 +7,7 @@
 	<property name="saludo" value="Hola Mundo!"></property>
 </bean>
 
-<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean>
+<bean class="com.mycode.beans.MyCodeBeanPostProcessor"></bean>
 
 <bean id="persona" class="com.mycode.beans.Persona" autowire="byType">
 	<property name="id" value="1"></property>
@@ -22,5 +22,15 @@
 <bean id="city" class="com.mycode.beans.City">
 	<property name="name" value="Colima"></property>
 </bean>
+
+<bean id="player" class="com.mycode.beans.Player">
+	<property name="number" value="10"></property>
+	<property name="name" value="Cristiano"></property>
+	<property name="team" ref="realmadrid"></property>
+</bean>
+
+<bean id="realmadrid" class="com.mycode.beans.RealMadrid"></bean>
+<bean id="bayern" class="com.mycode.beans.Bayern"></bean>
+
 
 </beans>

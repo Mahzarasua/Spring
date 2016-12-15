@@ -7,7 +7,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.mycode.beans.AppConfig;
 import com.mycode.beans.World;
+import com.mycode.interfaces.ITeam;
 import com.mycode.beans.Persona;
+import com.mycode.beans.Player;
 
 public class App {
 
@@ -31,6 +33,16 @@ public class App {
 		System.out.println(p.getId() + " " + p.getName() + " " + p.getNickname() + " " + p.getCountry().getName() + " " + p.getCity().getName());
 
 		((ConfigurableApplicationContext)appContext2).close();
+		
+		ApplicationContext appContext3 = new ClassPathXmlApplicationContext("com/mycode/xml/beans.xml");
+		
+		Player player = (Player) appContext3.getBean("player");
+		ITeam team = (ITeam) appContext3.getBean("bayern");
+		
+		System.out.println(player.getName() + " " + player.getNumber() + " " + player.getTeam().mostrar());
+		System.out.println(team.mostrar());
+
+		((ConfigurableApplicationContext)appContext3).close();
 	}
 
 }
