@@ -1,6 +1,7 @@
 package com.mycode.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Required;
 
 import com.mycode.interfaces.ITeam;
@@ -9,6 +10,7 @@ public class Player {
 	private int number;
 	private String name;
 	@Autowired
+	@Qualifier("realmadridQualifier")
 	private ITeam team;
 
 	public int getNumber() {
@@ -23,6 +25,7 @@ public class Player {
 		return name;
 	}
 
+	@Required
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -31,7 +34,7 @@ public class Player {
 		return team;
 	}
 
-	@Required
+//	@Required
 	public void setTeam(ITeam team) {
 		this.team = team;
 	}

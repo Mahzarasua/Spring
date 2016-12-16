@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 <bean class="com.mycode.beans.MyCodeBeanPostProcessor"></bean>
-<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
-<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"></bean>
+<context:annotation-config/>
 
 <bean id="mundo" class="com.mycode.beans.World">
 	<property name="saludo" value="Hola Mundo!"></property>
@@ -31,8 +32,10 @@
 	<!--  <property name="team" ref="realmadrid"></property> -->
 </bean>
 
-<bean id="realmadrid" class="com.mycode.beans.RealMadrid"></bean>
-<!--<bean id="bayern" class="com.mycode.beans.Bayern"></bean> -->
+<bean id="realmadrid" class="com.mycode.beans.RealMadrid">
+	<qualifier value="realmadridQualifier"></qualifier>
+</bean>
 
+<bean id="bayern" class="com.mycode.beans.Bayern"></bean>
 
 </beans>
