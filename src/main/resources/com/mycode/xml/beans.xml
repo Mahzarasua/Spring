@@ -3,11 +3,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+<bean class="com.mycode.beans.MyCodeBeanPostProcessor"></bean>
+<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
+<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"></bean>
+
 <bean id="mundo" class="com.mycode.beans.World">
 	<property name="saludo" value="Hola Mundo!"></property>
 </bean>
-
-<bean class="com.mycode.beans.MyCodeBeanPostProcessor"></bean>
 
 <bean id="persona" class="com.mycode.beans.Persona" autowire="byType">
 	<property name="id" value="1"></property>
@@ -26,11 +28,11 @@
 <bean id="player" class="com.mycode.beans.Player">
 	<property name="number" value="10"></property>
 	<property name="name" value="Cristiano"></property>
-	<property name="team" ref="realmadrid"></property>
+	<!--  <property name="team" ref="realmadrid"></property> -->
 </bean>
 
 <bean id="realmadrid" class="com.mycode.beans.RealMadrid"></bean>
-<bean id="bayern" class="com.mycode.beans.Bayern"></bean>
+<!--<bean id="bayern" class="com.mycode.beans.Bayern"></bean> -->
 
 
 </beans>

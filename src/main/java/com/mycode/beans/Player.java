@@ -1,10 +1,14 @@
 package com.mycode.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
+
 import com.mycode.interfaces.ITeam;
 
 public class Player {
 	private int number;
 	private String name;
+	@Autowired
 	private ITeam team;
 
 	public int getNumber() {
@@ -27,6 +31,7 @@ public class Player {
 		return team;
 	}
 
+	@Required
 	public void setTeam(ITeam team) {
 		this.team = team;
 	}
