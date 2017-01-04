@@ -6,7 +6,8 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 <bean class="com.mycode.beans.MyCodeBeanPostProcessor"></bean>
-<context:annotation-config/>
+
+<context:component-scan base-package="com.mycode.beans"></context:component-scan>
 
 <bean id="mundo" class="com.mycode.beans.World">
 	<property name="saludo" value="Hola Mundo!"></property>
@@ -25,17 +26,5 @@
 <bean id="city" class="com.mycode.beans.City">
 	<property name="name" value="Colima"></property>
 </bean>
-
-<bean id="player" class="com.mycode.beans.Player">
-	<property name="number" value="10"></property>
-	<property name="name" value="Cristiano"></property>
-	<!--  <property name="team" ref="realmadrid"></property> -->
-</bean>
-
-<bean id="realmadrid" class="com.mycode.beans.RealMadrid">
-	<qualifier value="realmadridQualifier"></qualifier>
-</bean>
-
-<bean id="bayern" class="com.mycode.beans.Bayern"></bean>
 
 </beans>

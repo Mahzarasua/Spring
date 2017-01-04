@@ -1,5 +1,7 @@
 package com.mycode.beans;
 
+
+
 import com.mycode.interfaces.ITeam;
 
 public class Bayern implements ITeam {

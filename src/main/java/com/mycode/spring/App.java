@@ -36,11 +36,11 @@ public class App {
 		
 		ApplicationContext appContext3 = new ClassPathXmlApplicationContext("com/mycode/xml/beans.xml");
 		
-		Player player = (Player) appContext3.getBean("player");
-		ITeam team = (ITeam) appContext3.getBean("bayern");
+		Player player = (Player) appContext3.getBean("cristiano");
+		//ITeam team = (ITeam) appContext3.getBean("bayern");
 		
 		System.out.println(player.getName() + " " + player.getNumber() + " " + player.getTeam().mostrar());
-		System.out.println(team.mostrar());
+		//System.out.println(team.mostrar());
 
 		((ConfigurableApplicationContext)appContext3).close();
 	}

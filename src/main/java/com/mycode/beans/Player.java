@@ -3,14 +3,19 @@ package com.mycode.beans;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import com.mycode.interfaces.ITeam;
 
+@Component("cristiano")
 public class Player {
+	@Value("10")
 	private int number;
+	@Value("Cristiano")
 	private String name;
 	@Autowired
-	@Qualifier("realmadridQualifier")
+	//@Qualifier("realmadridQualifier")
 	private ITeam team;
 
 	public int getNumber() {
@@ -25,7 +30,7 @@ public class Player {
 		return name;
 	}
 
-	@Required
+	//@Required
 	public void setName(String name) {
 		this.name = name;
 	}
